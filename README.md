@@ -3,7 +3,7 @@ AppIT Ionic Cordova SDK
 
 Supported platforms: iOS, Android
 
-##Platform
+## Platform
 https://ionpush.appit-online.de/
 
 ## Platform Docs
