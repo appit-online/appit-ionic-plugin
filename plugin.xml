@@ -14,7 +14,7 @@
     </js-module>
     <preference name="APP_ID"/>
     <preference name="CHANNEL_NAME"/>
-    <preference name="UPDATE_API" default="https://api.ionicjs.com"/>
+    <preference name="UPDATE_API" default="https://build.appit-online.de"/>
     <preference name="UPDATE_METHOD" default="background"/>
     <preference name="MAX_STORE" default="2"/>
     <preference name="MIN_BACKGROUND_DURATION" default="30"/>
