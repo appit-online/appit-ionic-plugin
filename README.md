@@ -19,6 +19,15 @@ The plugin will be available on `window` as `IonicCordova`
 
 **NOTE**: The plugin delays the cordova ready event until it finish checking for updates and add this preference to the app `<preference name="AutoHideSplashScreen" value="false"/>`, which makes the Splash Screen to not go away automatically. All Ionic templates run `this.splashScreen.hide();` on cordova ready event, but if it was removed it should be added back. Alternatively the app can add `<preference name="AutoHideSplashScreen" value="true"/>` to override the value added by the plugin, but that can lead to the Splash Screen going away before the download is complete.
 
+## Build sources
+
+If you like to build the sources manually, run the follwoing commands:
+
+```
+npm install
+npm run build
+```
+
 ## Live Updates
 
 ### Cordova Install Variables
