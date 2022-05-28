@@ -42,7 +42,7 @@
     NSString *srcDir = options[@"source"][@"directory"];
     NSString *srcPath = options[@"source"][@"path"];
     NSString *dest = options[@"target"];
-    
+
     if (![srcDir isEqualToString:@"APPLICATION"]) {
         [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString: @"Only Application directory is supported"]  callbackId:command.callbackId];
         return;
@@ -70,7 +70,7 @@
     NSString *target = options[@"target"];
     NSString *urlStr = options[@"url"];
     NSLog(@"Got downloadFile: %@", options);
-    
+
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
     NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -78,10 +78,24 @@
             NSLog(@"Download Error:%@",error.description);
             [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString: [error localizedDescription]]  callbackId:command.callbackId];
         }
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        if (httpResponse.statusCode != 200) {
+            NSString *errorMsg = [NSString stringWithFormat:@"HTTP response status code: %ld", httpResponse.statusCode];
+            NSLog(@"Download Error: %@", errorMsg);
+           [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString: errorMsg]  callbackId:command.callbackId];
+        }
         if (data) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:[target stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
             [data writeToFile:target atomically:YES];
             NSLog(@"File is saved to %@", target);
             [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
+        }
+
+        // error 28 – no space left on device so we manually flush and invalidate to free up space
+        if(urlSession != nil) {
+            [urlSession flushWithCompletionHandler:^{
+                [urlSession finishTasksAndInvalidate];
+            }];
         }
     }] resume];
 }
@@ -128,7 +142,7 @@
     NSMutableDictionary *customConfig = [self getCustomConfig];
 
     if (savedPrefs!= nil) {
-        
+
         NSLog(@"found some saved prefs doing precedence ops: %@", savedPrefs);
         // Merge with most up to date Native Settings
         [savedPrefs addEntriesFromDictionary:nativeConfig];
