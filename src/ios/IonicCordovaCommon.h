@@ -69,13 +69,13 @@
 - (void) downloadFile:(CDVInvokedUrlCommand *)command;
 
 /**
- * Get cordova plugin native congiguration and state information (config.xml stuff)
+ * Get cordova plugin native configuration and state information (config.xml stuff)
  *
  */
 - (NSMutableDictionary*) getNativeConfig;
 
 /**
- * Get cordova plugin custom congiguration overrides (things changed via configure method)
+ * Get cordova plugin custom configuration overrides (things changed via configure method)
  *
  */
 - (NSMutableDictionary*) getCustomConfig;
