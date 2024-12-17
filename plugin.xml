@@ -4,8 +4,8 @@
     <description>Ionic Cordova SDK</description>
     <license>MIT</license>
     <keywords>ionic,cordova,deploy,liveupdates,mobile,hybrid,ecosystem:cordova,cordova-android,cordova-ios</keywords>
-    <repo>https://github.com/ionic-team/cordova-plugin-ionic.git</repo>
-    <issue>https://github.com/ionic-team/cordova-plugin-ionic/issues</issue>
+    <repo>https://github.com/appit-online/appit-ionic-plugin.git</repo>
+    <issue>https://github.com/appit-online/appit-ionic-plugin/issues</issue>
     <js-module src="dist/common.js">
         <clobbers target="IonicCordova"/>
     </js-module>
