@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-ionic",
-  "version": "5.5.0",
+  "version": "5.5.3",
   "cordova": {
     "id": "cordova-plugin-ionic",
     "platforms": [
@@ -9,7 +9,7 @@
     ]
   },
   "main": "dist/index.js",
-  "types": "dist/IonicCordova.d.ts",
+  "types": "dist/index.d.ts",
   "description": "Ionic Cordova SDK",
   "scripts": {
     "apply-dev": "npm run build && ./scripts/apply-changes.sh",
@@ -78,6 +78,6 @@
     "testRegex": "tests/.*\\.(ts|js)$"
   },
   "dependencies": {
-    "typescript": "^3.8.3"
+    "typescript": "3.8.3"
   }
 }

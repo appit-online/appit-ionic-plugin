@@ -35,23 +35,23 @@ const pluginConfig = {
 
 describe('IonicCordova', () => {
 
-    beforeEach( () => {
-      global.cordova = mockCordova();
-    });
+  beforeEach( () => {
+    global.cordova = mockCordova();
+  });
 
-    afterEach( () => {
-      mockPluginAPI = {
-        IonicDeploy: {
-        },
-        IonicCordova: {
-        }
-      };
-    });
+  afterEach( () => {
+    mockPluginAPI = {
+      IonicDeploy: {
+      },
+      IonicCordova: {
+      }
+    };
+  });
 
-    it('should have a deploy object', async () => {
-      const pluginBase = IonicCordova;
-      expect(pluginBase.deploy).toBeDefined();
-    });
+  it('should have a deploy object', async () => {
+    const pluginBase = IonicCordova;
+    expect(pluginBase.deploy).toBeDefined();
+  });
 
   describe('IonicDeploy', () => {
 
