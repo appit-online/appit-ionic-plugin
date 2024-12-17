@@ -1,6 +1,6 @@
 {
   "name": "appit-cordova-plugin-ionic",
-  "version": "5.5.3",
+  "version": "5.5.4",
   "cordova": {
     "id": "cordova-plugin-ionic",
     "platforms": [
@@ -27,10 +27,10 @@
     "release": "npm run build && np --any-branch",
     "docs": "./scripts/docs.sh"
   },
-  "repository": "https://github.com/ionic-team/cordova-plugin-ionic.git",
-  "issue": "https://github.com/ionic-team/cordova-plugin-ionic/issues",
+  "repository": "https://github.com/appit-online/appit-ionic-plugin.git",
+  "issue": "https://github.com/appit-online/appit-ionic-plugin/issues",
   "bugs": {
-    "url": "https://github.com/ionic-team/cordova-plugin-ionic/issues"
+    "url": "https://github.com/appit-online/appit-ionic-plugin/issues"
   },
   "keywords": [
     "ionic",
