@@ -1,5 +1,5 @@
 {
-  "name": "@appit/cordova-plugin-ionic",
+  "name": "appit-cordova-plugin-ionic",
   "version": "5.5.3",
   "cordova": {
     "id": "cordova-plugin-ionic",
@@ -43,7 +43,7 @@
     "cordova-android",
     "cordova-ios"
   ],
-  "author": "Ionic",
+  "author": "AppIT",
   "contributors": [],
   "license": "MIT",
   "devDependencies": {
@@ -61,6 +61,10 @@
     "typedoc": "^0.11.1",
     "typedoc-plugin-markdown": "^1.1.6",
     "watch": "^1.0.2"
+  },
+  "funding": {
+    "url": "https://paypal.me/dave7117",
+    "type": "paypal"
   },
   "jest": {
     "globals": {
