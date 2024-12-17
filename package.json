@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-ionic",
+  "name": "@appit/cordova-plugin-ionic",
   "version": "5.5.3",
   "cordova": {
     "id": "cordova-plugin-ionic",
@@ -14,7 +14,7 @@
   "scripts": {
     "apply-dev": "npm run build && ./scripts/apply-changes.sh",
     "create-dev": "./scripts/create-local-app.sh",
-    "clean": "rimraf dist",
+    "clean": "rm -rf dist",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "precommit": "npm run lint",
     "watch": "tsc -w",

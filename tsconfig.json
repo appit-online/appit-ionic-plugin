@@ -12,6 +12,8 @@
     "noUnusedLocals": true,
     "pretty": true,
     "strict": true,
+    "skipLibCheck": true,
+    "types": [],
     "target": "es5",
     "lib": [
       "es2015",
